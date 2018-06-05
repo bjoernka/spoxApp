@@ -10,10 +10,4 @@
 
 @interface HomeTable : UITableViewController
 
-@property (strong, nonatomic) UIImage *bearImage;
-
-@property (strong, nonatomic) NSArray *images;
-
-//extern NSArray* images;
-
 @end

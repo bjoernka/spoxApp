@@ -15,6 +15,9 @@
 		19C936C620BE52F800B91288 /* HomeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C936C520BE52F800B91288 /* HomeTable.m */; };
 		19C936C920BE659400B91288 /* HomeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C936C820BE659400B91288 /* HomeNavController.m */; };
 		19C936CC20BFC65800B91288 /* HomeDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C936CB20BFC65800B91288 /* HomeDetail.m */; };
+		19E4856420C4029C001C7C80 /* NewsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856320C4029C001C7C80 /* NewsTable.m */; };
+		19E4856820C50940001C7C80 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856720C50940001C7C80 /* NewsData.m */; };
+		19E4856B20C51FEF001C7C80 /* NewsSortedTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856A20C51FEF001C7C80 /* NewsSortedTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,12 @@
 		19C936C820BE659400B91288 /* HomeNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNavController.m; sourceTree = "<group>"; };
 		19C936CA20BFC65800B91288 /* HomeDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDetail.h; sourceTree = "<group>"; };
 		19C936CB20BFC65800B91288 /* HomeDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetail.m; sourceTree = "<group>"; };
+		19E4856220C4029C001C7C80 /* NewsTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTable.h; sourceTree = "<group>"; };
+		19E4856320C4029C001C7C80 /* NewsTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTable.m; sourceTree = "<group>"; };
+		19E4856620C50940001C7C80 /* NewsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsData.h; sourceTree = "<group>"; };
+		19E4856720C50940001C7C80 /* NewsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
+		19E4856920C51FEF001C7C80 /* NewsSortedTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsSortedTable.h; sourceTree = "<group>"; };
+		19E4856A20C51FEF001C7C80 /* NewsSortedTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsSortedTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +73,8 @@
 		19C936AA20BD7D9C00B91288 /* spoxApp */ = {
 			isa = PBXGroup;
 			children = (
+				19E4856620C50940001C7C80 /* NewsData.h */,
+				19E4856720C50940001C7C80 /* NewsData.m */,
 				19C936AB20BD7D9C00B91288 /* AppDelegate.h */,
 				19C936AC20BD7D9C00B91288 /* AppDelegate.m */,
 				19C936CA20BFC65800B91288 /* HomeDetail.h */,
@@ -72,6 +83,10 @@
 				19C936C520BE52F800B91288 /* HomeTable.m */,
 				19C936C720BE659400B91288 /* HomeNavController.h */,
 				19C936C820BE659400B91288 /* HomeNavController.m */,
+				19E4856220C4029C001C7C80 /* NewsTable.h */,
+				19E4856320C4029C001C7C80 /* NewsTable.m */,
+				19E4856920C51FEF001C7C80 /* NewsSortedTable.h */,
+				19E4856A20C51FEF001C7C80 /* NewsSortedTable.m */,
 				19C936B120BD7D9C00B91288 /* Main.storyboard */,
 				19C936B420BD7D9D00B91288 /* Assets.xcassets */,
 				19C936B620BD7D9D00B91288 /* LaunchScreen.storyboard */,
@@ -151,7 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E4856820C50940001C7C80 /* NewsData.m in Sources */,
 				19C936C920BE659400B91288 /* HomeNavController.m in Sources */,
+				19E4856B20C51FEF001C7C80 /* NewsSortedTable.m in Sources */,
+				19E4856420C4029C001C7C80 /* NewsTable.m in Sources */,
 				19C936BB20BD7D9D00B91288 /* main.m in Sources */,
 				19C936CC20BFC65800B91288 /* HomeDetail.m in Sources */,
 				19C936C620BE52F800B91288 /* HomeTable.m in Sources */,

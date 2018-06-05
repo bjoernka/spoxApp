@@ -1,34 +1,36 @@
 //
-//  HomeTable.m
+//  NewsTable.m
 //  spoxApp
 //
-//  Created by Björn Kaczmarek on 30.05.18.
+//  Created by Björn Kaczmarek on 03.06.18.
 //  Copyright © 2018 Björn Kaczmarek. All rights reserved.
 //
 
-#import "HomeTable.h"
+#import "NewsTable.h"
 #import "NewsData.h"
+#import "NewsSortedTable.h"
 
-@interface HomeTable ()
+@interface NewsTable ()
 
-// leftBarButtonItem can be used to place a logo in the Navigationbar
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
 @property (strong, nonatomic) NewsData *newsData;
 
 @end
 
-@implementation HomeTable
-
+@implementation NewsTable
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    For demonstration purposes the data is added statically
+    // delete unnecessary lines under tableView
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.newsData = [[NewsData alloc] init];
-    self.newsData.images = @[@"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
-                               @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
-                               @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5"];
-    
+    self.newsData.category = @[@"examCat1", @"examCat2", @"examCat3", @"examCat4", @"examCat5"];
+    self.newsData.images = @[@"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5"];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -43,20 +45,16 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeTableCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsTableCell" forIndexPath:indexPath];
     
+    cell.textLabel.text = @"cell";
     cell.imageView.image = [UIImage imageNamed:self.newsData.images[indexPath.row]];
-    cell.textLabel.text = @"Ordne Deine lieblings Hoster per Drag & Drop um schneller zum gewünschten Stream zu kommen!";
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 3;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    Get the screenspace between Navigationbar and tabbar
     CGFloat tableViewHeight = tableView.bounds.size.height;
     CGFloat tabbarHeight = self.tabBarController.tabBar.bounds.size.height;
     CGFloat navbarHeight = self.navigationController.navigationBar.bounds.size.height;
@@ -66,18 +64,22 @@
     return (usableScreenHeight / 6);
 }
 
-/*
 #pragma mark - Navigation
-*/
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier  isEqual: @"homeDetail"]) {
-        UIViewController *destinationVC = [segue destinationViewController];
-        destinationVC.title = @"Detail";
+    if ([segue.identifier  isEqual: @"newsDetail"]) {
+//      UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+//      UITableViewController *controller = navController.topViewController;
+//      NewsSortedTable *destVC = (NewsSortedTable *)segue.destinationViewController;
+        
+        NewsSortedTable *destVC = [segue destinationViewController];
+        destVC.title = @"Detail";
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        [destinationVC setValue:self.newsData.images[indexPath.row] forKey:@"imageName"];
+        NSLog(@"Value of indexPath = %lu", indexPath.row);
+        destVC.cellTapped = self.newsData.category[indexPath.row];
     }
 }
 
