@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     _imageView.image = [UIImage imageNamed:_imageName];
 }
 

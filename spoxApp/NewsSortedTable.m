@@ -21,8 +21,8 @@
     
     self.newsData = [[NewsData alloc] init];
     self.newsData.images = @[@"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
-                               @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
-                               @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5"];
+                             @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
+                             @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5"];
     
     self.newsData.category= @[@"examCat1", @"examCat2", @"examCat3", @"examCat4", @"examCat5",
                               @"examCat1", @"examCat2", @"examCat3", @"examCat4", @"examCat5",
@@ -75,6 +75,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Get the screenspace between Navigationbar and tabbar
     CGFloat tableViewHeight = tableView.bounds.size.height;
     CGFloat tabbarHeight = self.tabBarController.tabBar.bounds.size.height;
     CGFloat navbarHeight = self.navigationController.navigationBar.bounds.size.height;

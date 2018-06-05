@@ -23,11 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    For demonstration purposes the data is added statically
+    // For demonstration purposes the data is added statically
     self.newsData = [[NewsData alloc] init];
     self.newsData.images = @[@"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
-                               @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
-                               @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5"];
+                             @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5",
+                             @"examPic1", @"examPic2", @"examPic3", @"examPic4", @"examPic5"];
     
 }
 
@@ -50,13 +50,13 @@
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 3;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    Get the screenspace between Navigationbar and tabbar
+    // Get the screenspace between Navigationbar and tabbar
     CGFloat tableViewHeight = tableView.bounds.size.height;
     CGFloat tabbarHeight = self.tabBarController.tabBar.bounds.size.height;
     CGFloat navbarHeight = self.navigationController.navigationBar.bounds.size.height;
@@ -67,8 +67,8 @@
 }
 
 /*
-#pragma mark - Navigation
-*/
+ #pragma mark - Navigation
+ */
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

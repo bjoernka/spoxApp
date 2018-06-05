@@ -14,6 +14,4 @@
 
 @interface NewsTable : UITableViewController
 
-@property (strong, nonatomic) NSArray *images;
-
 @end
