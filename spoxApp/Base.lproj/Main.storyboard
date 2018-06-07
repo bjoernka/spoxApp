@@ -238,7 +238,7 @@
         <!--More-->
         <scene sceneID="2p2-JP-JUn">
             <objects>
-                <tableViewController id="WJG-De-jkf" sceneMemberID="viewController">
+                <tableViewController id="WJG-De-jkf" customClass="MoreTable" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aYj-5V-VDE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,6 +251,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="r3D-x0-5fK" kind="show" identifier="moreDetail" id="flJ-E6-QqG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -263,6 +266,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45a-CO-gY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801" y="1325"/>
+        </scene>
+        <!--More Detail-->
+        <scene sceneID="ayI-7y-HHN">
+            <objects>
+                <viewController id="r3D-x0-5fK" customClass="MoreDetail" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M2i-Vh-kPF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzh-Ob-gmb">
+                                <rect key="frame" x="16" y="304" width="343" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qzh-Ob-gmb" firstAttribute="centerX" secondItem="n6w-WD-wdk" secondAttribute="centerX" id="1Jv-lE-8eX"/>
+                            <constraint firstItem="qzh-Ob-gmb" firstAttribute="centerY" secondItem="n6w-WD-wdk" secondAttribute="centerY" id="LTJ-kg-byL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n6w-WD-wdk"/>
+                    </view>
+                    <connections>
+                        <outlet property="eMailLabel" destination="qzh-Ob-gmb" id="YeI-tR-o41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYT-HS-NoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.79999999999995" y="2181.8590704647677"/>
         </scene>
         <!--Home-->
         <scene sceneID="VTi-AD-jL9">

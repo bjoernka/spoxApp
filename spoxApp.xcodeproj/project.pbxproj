@@ -18,6 +18,8 @@
 		19E4856420C4029C001C7C80 /* NewsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856320C4029C001C7C80 /* NewsTable.m */; };
 		19E4856820C50940001C7C80 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856720C50940001C7C80 /* NewsData.m */; };
 		19E4856B20C51FEF001C7C80 /* NewsSortedTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856A20C51FEF001C7C80 /* NewsSortedTable.m */; };
+		19E4856E20C7B3CF001C7C80 /* MoreTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4856D20C7B3CF001C7C80 /* MoreTable.m */; };
+		19E4857120C7F523001C7C80 /* MoreDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E4857020C7F523001C7C80 /* MoreDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		19E4856720C50940001C7C80 /* NewsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
 		19E4856920C51FEF001C7C80 /* NewsSortedTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsSortedTable.h; sourceTree = "<group>"; };
 		19E4856A20C51FEF001C7C80 /* NewsSortedTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsSortedTable.m; sourceTree = "<group>"; };
+		19E4856C20C7B3CF001C7C80 /* MoreTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreTable.h; sourceTree = "<group>"; };
+		19E4856D20C7B3CF001C7C80 /* MoreTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreTable.m; sourceTree = "<group>"; };
+		19E4856F20C7F523001C7C80 /* MoreDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreDetail.h; sourceTree = "<group>"; };
+		19E4857020C7F523001C7C80 /* MoreDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,10 @@
 				19E4856320C4029C001C7C80 /* NewsTable.m */,
 				19E4856920C51FEF001C7C80 /* NewsSortedTable.h */,
 				19E4856A20C51FEF001C7C80 /* NewsSortedTable.m */,
+				19E4856C20C7B3CF001C7C80 /* MoreTable.h */,
+				19E4856D20C7B3CF001C7C80 /* MoreTable.m */,
+				19E4856F20C7F523001C7C80 /* MoreDetail.h */,
+				19E4857020C7F523001C7C80 /* MoreDetail.m */,
 				19C936B120BD7D9C00B91288 /* Main.storyboard */,
 				19C936B420BD7D9D00B91288 /* Assets.xcassets */,
 				19C936B620BD7D9D00B91288 /* LaunchScreen.storyboard */,
@@ -171,6 +181,8 @@
 				19E4856B20C51FEF001C7C80 /* NewsSortedTable.m in Sources */,
 				19E4856420C4029C001C7C80 /* NewsTable.m in Sources */,
 				19C936BB20BD7D9D00B91288 /* main.m in Sources */,
+				19E4857120C7F523001C7C80 /* MoreDetail.m in Sources */,
+				19E4856E20C7B3CF001C7C80 /* MoreTable.m in Sources */,
 				19C936CC20BFC65800B91288 /* HomeDetail.m in Sources */,
 				19C936C620BE52F800B91288 /* HomeTable.m in Sources */,
 				19C936AD20BD7D9C00B91288 /* AppDelegate.m in Sources */,
