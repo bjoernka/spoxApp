@@ -9,6 +9,9 @@
 #import "HomeDetail.h"
 
 @interface HomeDetail ()
+
+@property (strong, nonatomic) NSString *imageName;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -18,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _imageView.image = [UIImage imageNamed:_imageName];
+    self.imageView.image = [UIImage imageNamed:self.imageName];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,8 +10,11 @@
 #import "NewsData.h"
 
 @interface NewsSortedTable ()
+
 @property (strong, nonatomic) NewsData *newsData;
+
 @property NSMutableArray* selecPics;
+
 @end
 
 @implementation NewsSortedTable
@@ -30,21 +33,21 @@
     
     NSString *category = [[NSString alloc]init];
     int counter = -1;
-    _selecPics = [[NSMutableArray alloc]init];
+    self.selecPics = [[NSMutableArray alloc]init];
     
     for (category in self.newsData.category) {
         counter += 1;
         NSLog(@"Value of counter = %d", counter);
         if (category == self.cellTapped){
             NSString *categoryName = [self.newsData.category objectAtIndex:counter];
-            [_selecPics addObject:[NSNumber numberWithInt:counter]];
+            [self.selecPics addObject:[NSNumber numberWithInt:counter]];
             NSLog(@"Value of categoryName = %@", categoryName);
         } else {
         }
     }
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    NSLog(@"Value of selecPics = %@", _selecPics);
+    NSLog(@"Value of selecPics = %@", self.selecPics);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,14 +62,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _selecPics.count;
+    return self.selecPics.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsSortCell" forIndexPath:indexPath];
     
-    NSNumber *selecPicsNumber = (NSNumber*)_selecPics[indexPath.row];
+    NSNumber *selecPicsNumber = (NSNumber*)self.selecPics[indexPath.row];
     NSInteger selecPicsInt = [selecPicsNumber integerValue];
     NSLog(@"Value of selecPicsNumber = %@", selecPicsNumber);
     cell.imageView.image = [UIImage imageNamed:[self.newsData.images objectAtIndex:selecPicsInt]];
@@ -95,7 +98,7 @@
         destinationVC.title = @"Detail";
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        NSNumber *selecPicsNumber = (NSNumber*)_selecPics[indexPath.row];
+        NSNumber *selecPicsNumber = (NSNumber*)self.selecPics[indexPath.row];
         NSInteger selecPicsInt = [selecPicsNumber integerValue];
         [destinationVC setValue:[self.newsData.images objectAtIndex:selecPicsInt] forKey:@"imageName"];
     }

@@ -10,6 +10,4 @@
 
 @interface HomeDetail : UIViewController
 
-@property (strong, nonatomic) NSString *imageName;
-
 @end

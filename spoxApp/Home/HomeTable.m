@@ -12,7 +12,7 @@
 @interface HomeTable ()
 
 // leftBarButtonItem can be used to place a logo in the Navigationbar
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
+// @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
 @property (strong, nonatomic) NewsData *newsData;
 
 @end

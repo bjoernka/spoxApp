@@ -6,16 +6,16 @@
 //  Copyright © 2018 Björn Kaczmarek. All rights reserved.
 //
 
-#import "MoreDetail.h"
+#import "Feedback.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface MoreDetail ()
+@interface Feedback ()
 @property (weak, nonatomic) IBOutlet UILabel *eMailLabel;
 
 @end
 
-@implementation MoreDetail
+@implementation Feedback
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +37,6 @@
     } else {
         NSLog(@"self.cellTapped not transferred.");
     }
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,17 +48,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     if (result == MFMailComposeResultCancelled) {
         // Cancel - Delete Draft pressed
-        _eMailLabel.text = @"E-Mail was not send.";
+        self.eMailLabel.text = @"E-Mail was not send.";
         NSLog(@"Canceled!");
     } else if (result == MFMailComposeResultSaved) {
         // Cancel - Save Draft pressed
-        _eMailLabel.text = @"E-Mail was saved.";
+        self.eMailLabel.text = @"E-Mail was saved.";
     }else if (result == MFMailComposeResultSent) {
         // Send pressed
-        _eMailLabel.text = @"E-Mail was send.";
+        self.eMailLabel.text = @"E-Mail was send.";
     } else if (result == MFMailComposeResultFailed) {
         // Send pressed but sending failed
-        _eMailLabel.text = @"Sending E-Mail failed.";
+        self.eMailLabel.text = @"Sending E-Mail failed.";
     }
 }
 

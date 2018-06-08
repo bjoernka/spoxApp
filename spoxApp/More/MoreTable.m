@@ -7,7 +7,9 @@
 //
 
 #import "MoreTable.h"
-#import "MoreDetail.h"
+#import "Feedback.h"
+#import "Imprint.h"
+#import "Settings.h"
 
 @interface MoreTable ()
 
@@ -20,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _moreOptions = @[@"Settings",@"Imprint",@"Feedback"];
+    self.moreOptions = @[@"Settings",@"Imprint",@"Feedback"];
     
     // delete unnecessary lines under tableView
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -39,13 +41,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _moreOptions.count;
+    return self.moreOptions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = _moreOptions[indexPath.row];
+    cell.textLabel.text = self.moreOptions[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
@@ -63,23 +65,28 @@
     return (usableScreenHeight / 7);
 }
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    if ([segue.identifier  isEqual: @"moreDetail"]) {
-        // UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
-        // UITableViewController *controller = navController.topViewController;
-        // NewsSortedTable *destVC = (NewsSortedTable *)segue.destinationViewController;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        // First cell selected
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        Settings *settingsVC = (Settings *)[storyboard instantiateViewControllerWithIdentifier:@"settingsVC"];
+        settingsVC.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+        [self.navigationController pushViewController:settingsVC animated:YES];
+    } else if (indexPath.row == 1) {
+        // Second cell selected
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        Imprint *imprintVC = (Imprint *)[storyboard instantiateViewControllerWithIdentifier:@"imprintVC"];
+        imprintVC.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+        [self.navigationController pushViewController:imprintVC animated:YES];
+    } else if (indexPath.row == 2) {
+        // Third cell selected
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        Feedback *feedbackVC = (Feedback *)[storyboard instantiateViewControllerWithIdentifier:@"feedbackVC"];
+        feedbackVC.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+        feedbackVC.cellTapped = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+        [self.navigationController pushViewController:feedbackVC animated:YES];
+    } else {
         
-        MoreDetail *destVC = [segue destinationViewController];
-        UITableViewCell *cell = (UITableViewCell *)sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        NSLog(@"Value of indexPathRow = %lu", indexPath.row);
-        destVC.title = cell.textLabel.text;
-        destVC.cellTapped = cell.textLabel.text;
     }
 }
-
 @end

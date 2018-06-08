@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface MoreDetail : UIViewController <MFMailComposeViewControllerDelegate>
+@interface Feedback : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property NSString *cellTapped;
 
